@@ -17,6 +17,8 @@ public enum TaskStatus {
     RUNNING(0, "任务正在运行"),
     //任务执行成功
     SUCCESS(2, "任务执行成功"),
+    //任务部分错误
+    ERROR(3,"任务部分错误"),
     //任务执行失败
     FAILED(-2, "任务执行失败");
     private int state;

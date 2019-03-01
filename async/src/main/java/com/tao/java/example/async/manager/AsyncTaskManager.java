@@ -22,7 +22,7 @@ import java.util.UUID;
 @Component
 public class AsyncTaskManager {
 
-    private Map<String,TaskInfo> taskContainer = new HashMap<>();
+    private Map<String,TaskInfo> taskContainer = new HashMap<>(16);
 
     @Autowired
     private AsyncTaskExecutor asyncTaskExecutor;

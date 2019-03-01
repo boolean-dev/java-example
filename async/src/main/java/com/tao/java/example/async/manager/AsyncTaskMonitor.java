@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @ClassName AsyncTaskMonitor
@@ -42,9 +44,17 @@ public class AsyncTaskMonitor {
             status = TaskStatus.FAILED;
             log.error("AsyncTaskMonitor:async task {} is failed.Error info:{}", taskId, throwable.getMessage());
         }
-        taskInfo.setEndTime(new Date());
+        if (false) {
+            Set<String> errCode = new HashSet<>();
+            errCode.add("111");
+            errCode.add("222");
+            taskInfo.setErrCodes(errCode);
+            status = TaskStatus.ERROR;
+        }
+        Date endData = new Date();
+        taskInfo.setEndTime(endData);
         taskInfo.setStatus(status);
-        taskInfo.setTotalTime(0L);
+        taskInfo.setTotalTime(endData.getTime() - taskInfo.getStartTime().getTime());
         manager.setTaskInfo(taskInfo);
     }
 

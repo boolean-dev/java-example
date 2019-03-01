@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.util.Date;
+import java.util.Set;
 
 /**
  * @ClassName TaskInfo
@@ -21,4 +22,5 @@ public class TaskInfo {
     private Date startTime;
     private Date endTime;
     private long totalTime;
+    private Set<String> errCodes;
 }
