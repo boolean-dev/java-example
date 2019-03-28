@@ -8,11 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="async" />
         <module name="example" />
+        <module name="kafka" />
+        <module name="shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="async" target="1.8" />
       <module name="example" target="1.8" />
+      <module name="kafka" target="1.8" />
+      <module name="shiro" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

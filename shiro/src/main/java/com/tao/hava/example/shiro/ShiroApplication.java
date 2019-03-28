@@ -1,13 +1,13 @@
-package com.tao.java.example.kafka;
+package com.tao.hava.example.shiro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkaApplication {
+public class ShiroApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KafkaApplication.class, args);
+		SpringApplication.run(ShiroApplication.class, args);
 	}
 
 }

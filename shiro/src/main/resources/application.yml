@@ -1,0 +1,18 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: springboot
+  datasource:
+    url: jdbc:mysql://39.108.216.235:3306/shiro?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: root123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      query-timeout: 6000
+      transaction-query-timeout: 6000
+      remove-abandoned-timeout: 1800
