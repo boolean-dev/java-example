@@ -1,7 +1,7 @@
-package com.tao.hava.example.shiro.dao;
+package com.tao.java.example.shiro.dao;
 
-import com.tao.hava.example.shiro.entity.Admin;
-import com.tao.hava.example.shiro.entity.Role;
+import com.tao.java.example.shiro.entity.Admin;
+import com.tao.java.example.shiro.entity.Role;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -27,4 +27,7 @@ public interface AdminDao {
 
     @Select("")
     List<Role> getRolesByUserName(String username);
+
+    @Select("SELECT * FROM `admin`  t WHERE t.username = #{username}")
+    Admin getUserByUserName(String username);
 }

@@ -1,4 +1,4 @@
-package com.tao.hava.example.shiro.shiro;
+package com.tao.java.example.shiro.shiro;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.web.servlet.ShiroHttpServletRequest;

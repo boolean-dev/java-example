@@ -1,4 +1,4 @@
-package com.tao.hava.example.shiro;
+package com.tao.java.example.shiro;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

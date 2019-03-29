@@ -1,4 +1,4 @@
-package com.tao.hava.example.shiro.entity;
+package com.tao.java.example.shiro.entity;
 
 import lombok.Data;
 

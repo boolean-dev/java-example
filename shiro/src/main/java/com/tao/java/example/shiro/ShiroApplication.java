@@ -1,4 +1,4 @@
-package com.tao.hava.example.shiro;
+package com.tao.java.example.shiro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

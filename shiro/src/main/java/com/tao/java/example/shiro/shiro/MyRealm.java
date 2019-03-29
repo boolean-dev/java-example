@@ -1,7 +1,7 @@
-package com.tao.hava.example.shiro.shiro;
+package com.tao.java.example.shiro.shiro;
 
-import com.tao.hava.example.shiro.entity.Admin;
-import com.tao.hava.example.shiro.service.AdminService;
+import com.tao.java.example.shiro.entity.Admin;
+import com.tao.java.example.shiro.service.AdminService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -9,7 +9,6 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
-import sun.net.www.protocol.http.AuthenticationInfo;
 
 import java.util.Map;
 import java.util.Set;
@@ -37,7 +36,7 @@ public class MyRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo auth = new SimpleAuthorizationInfo();
         Map<String, Object> map = null;
         try {
-            list = this.adminService.getRolesAndPermissionsByUserName(userName);
+            map = this.adminService.getRolesAndPermissionsByUserName(userName);
             auth.setRoles((Set<String>) map.get("allRoles"));
             auth.setStringPermissions((Set<String>) map.get("allPermissions"));
         } catch (Exception e) {
@@ -59,7 +58,7 @@ public class MyRealm extends AuthorizingRealm {
         Admin admin = this.adminService.getUserByUserName(userName);
         if (admin == null) {
             throw new UnknownAccountException("该用户名称不存在！");
-        } else if (admin.getLock() == null || admin.getLock().equals(1)) {
+        } else if (admin.getLock()) {
             throw new UnknownAccountException("该用户已经被锁定了！");
         } else {
             String password = new String((char[]) token.getCredentials());
