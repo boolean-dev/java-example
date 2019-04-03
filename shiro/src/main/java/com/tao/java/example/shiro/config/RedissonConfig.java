@@ -74,7 +74,7 @@ public class RedissonConfig {
                 .setPingTimeout(pingTimeout)
                 .setPassword(password);
 //        Codec codec=(Codec) ClassUtils.forName(getCodec(),ClassUtils.getDefaultClassLoader()).newInstance();
-        config.setCodec(new SerializationCodec());
+        config.setCodec(new JsonJacksonCodec());
         config.setThreads(thread);
         config.setEventLoopGroup(new NioEventLoopGroup());
 //        config.setUseLinuxNativeEpoll(false);

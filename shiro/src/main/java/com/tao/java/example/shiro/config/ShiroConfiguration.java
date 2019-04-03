@@ -49,19 +49,9 @@ public class ShiroConfiguration {
         //cache过期时间及前缀
         redisCacheManager.setCacheLive(cacheLive);
         redisCacheManager.setCacheKeyPrefix(cachePrefix);
-//        redisCacheManager.setRedisTemplate(redisson);
         redisCacheManager.setRedisson(redisson);
         return redisCacheManager;
     }
-   /* @Bean(name = "redisCacheManager")
-    public RedisCacheManager redisCacheManager(RedisTemplate redisTemplate) {
-        RedisCacheManager redisCacheManager = new RedisCacheManager();
-        //cache过期时间及前缀
-        redisCacheManager.setCacheLive(cacheLive);
-        redisCacheManager.setCacheKeyPrefix(cachePrefix);
-        redisCacheManager.setRedisTemplate(redisTemplate);
-        return redisCacheManager;
-    }*/
 
     /**
      * 凭证匹配器（密码加密）
@@ -89,21 +79,6 @@ public class ShiroConfiguration {
         return sessionIdGenerator;
     }
 
-    /**
-     * 自定义shiro session
-     *
-     * @return
-     */
-   /* @Bean(name = "redisSessionDAO")
-    public RedisSessionDAO redisSessionDAO(JavaUuidSessionIdGenerator sessionIdGenerator, RedisTemplate redisTemplate) {
-        RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
-        redisSessionDAO.setSessionIdGenerator(sessionIdGenerator);
-        //session过期时间及前缀
-        redisSessionDAO.setSessionLive(sessionLive);
-        redisSessionDAO.setSessionKeyPrefix(sessionPrefix);
-        redisSessionDAO.setRedisTemplate(redisTemplate);
-        return redisSessionDAO;
-    }*/
 
     @Bean(name = "redisSessionDAO")
     public RedisSessionDAO redisSessionDAO(JavaUuidSessionIdGenerator sessionIdGenerator, RedissonClient redisson) {

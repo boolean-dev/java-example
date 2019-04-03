@@ -16,7 +16,6 @@ import java.util.concurrent.ConcurrentMap;
 public class RedisCacheManager implements CacheManager {
     private long cacheLive;
     private String cacheKeyPrefix;
-//    private RedisTemplate redisTemplate;
     private RedissonClient redisson;
 
     private final ConcurrentMap<String, Cache> caches = new ConcurrentHashMap<>();
@@ -41,9 +40,6 @@ public class RedisCacheManager implements CacheManager {
         this.cacheKeyPrefix = cacheKeyPrefix;
     }
 
-   /* public void setRedisTemplate(RedisTemplate redisTemplate) {
-        this.redisTemplate = redisTemplate;
-    }*/
 
     public void setRedisson(RedissonClient redisson) {
         this.redisson = redisson;

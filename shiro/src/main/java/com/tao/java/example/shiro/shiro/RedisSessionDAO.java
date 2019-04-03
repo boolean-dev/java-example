@@ -5,6 +5,7 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.eis.AbstractSessionDAO;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
+import org.redisson.codec.SerializationCodec;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.Serializable;
@@ -24,7 +25,6 @@ public class RedisSessionDAO extends AbstractSessionDAO {
 
     private long sessionLive;
     private String sessionKeyPrefix;
-//    private RedisTemplate redisTemplate;
     private RedissonClient redisson;
 
     /**
@@ -41,7 +41,7 @@ public class RedisSessionDAO extends AbstractSessionDAO {
 //        return sessionId;
         Serializable sessionId = generateSessionId(session);
         assignSessionId(session, sessionId);
-        RBucket<Session> rBucket = redisson.getBucket(sessionKeyPrefix + sessionId);
+        RBucket<Session> rBucket = redisson.getBucket(sessionKeyPrefix + sessionId,new SerializationCodec());
         rBucket.set(session, sessionLive, TimeUnit.MINUTES);
         log.info("session={}", session);
         return sessionId;
@@ -52,7 +52,7 @@ public class RedisSessionDAO extends AbstractSessionDAO {
         log.info("------------->从浏览器中读取session");
 //        Object session = redisTemplate.opsForValue().get(sessionKeyPrefix + sessionId);
 //        return (Session) redisTemplate.opsForValue().get(sessionKeyPrefix + sessionId);
-        RBucket<Session> rBucket = redisson.getBucket(sessionKeyPrefix + sessionId);
+        RBucket<Session> rBucket = redisson.getBucket(sessionKeyPrefix + sessionId,new SerializationCodec());
         if (rBucket.isExists()) {
             return rBucket.get();
         }
@@ -65,7 +65,7 @@ public class RedisSessionDAO extends AbstractSessionDAO {
         log.info("------------->更新session");
 //        this.redisTemplate.opsForValue().set(sessionKeyPrefix + session.getId(), session, sessionLive, TimeUnit.MINUTES);
         log.info("session={}", session);
-        RBucket<Session> rBucket = redisson.getBucket(sessionKeyPrefix + session.getId());
+        RBucket<Session> rBucket = redisson.getBucket(sessionKeyPrefix + session.getId(),new SerializationCodec());
         rBucket.set(session, sessionLive, TimeUnit.MINUTES);
     }
 
@@ -76,7 +76,7 @@ public class RedisSessionDAO extends AbstractSessionDAO {
             return;
         }
 //        this.redisTemplate.delete(sessionKeyPrefix + session.getId());
-        RBucket<Session> rBucket = redisson.getBucket(sessionKeyPrefix + session.getId());
+        RBucket<Session> rBucket = redisson.getBucket(sessionKeyPrefix + session.getId(),new SerializationCodec());
         rBucket.delete();
     }
 
@@ -92,7 +92,7 @@ public class RedisSessionDAO extends AbstractSessionDAO {
         }*/
         Set<Session> sessions = new HashSet<>(10);
         this.redisson.getKeys().getKeysByPattern(sessionKeyPrefix + "*").forEach(key -> {
-            RBucket<Session> buckets = this.redisson.getBucket(key);
+            RBucket<Session> buckets = this.redisson.getBucket(key,new SerializationCodec());
             sessions.add(buckets.get());
         });
         return sessions;

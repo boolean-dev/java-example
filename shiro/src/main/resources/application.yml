@@ -26,8 +26,8 @@ spring:
         max-active: 8
         max-idle: 8
         min-idle: 0
-  main:
-    allow-bean-definition-overriding: true
+#  main:
+#    allow-bean-definition-overriding: true
   redisson:
     address: redis://www.booleandev.xyz:6379
     password: root123456

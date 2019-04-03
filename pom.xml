@@ -18,6 +18,7 @@
 		<module>async</module>
 		<module>kafka</module>
 		<module>shiro</module>
+		<module>transactional</module>
 	</modules>
 
 	<properties>

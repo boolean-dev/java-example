@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: transactional
+  datasource:
+#    url: jdbc:mysql://www.booleandev.xyz:3306/onegene_official?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://www.booleandev.xyz:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: root123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      query-timeout: 6000
+      transaction-query-timeout: 6000
+      remove-abandoned-timeout: 1800
+
+  profiles:
+    active: dev
+logging:
+  path: logs
+mybatis:
+  config-location: classpath:/mybatis-config.xml
+  mapper-locations: classpath:mybatis/*.xml

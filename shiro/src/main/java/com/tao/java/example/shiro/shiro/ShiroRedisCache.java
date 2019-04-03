@@ -7,6 +7,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.redisson.api.RBucket;
 import org.redisson.api.RBuckets;
 import org.redisson.api.RedissonClient;
+import org.redisson.codec.SerializationCodec;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -21,6 +22,7 @@ public class ShiroRedisCache<K, V> implements Cache<K, V> {
     private String cacheKeyPrefix;
 //    private RedisTemplate redisTemplate;
     private RedissonClient redisson;
+    private final static  SerializationCodec CODEC = new SerializationCodec();
 
     /*public ShiroRedisCache(RedisTemplate redisTemplate, long cacheLive, String cachePrefix) {
         this.redisTemplate = redisTemplate;
@@ -37,7 +39,7 @@ public class ShiroRedisCache<K, V> implements Cache<K, V> {
     @Override
     public V get(K k) throws CacheException {
         log.info("---------------->ShiroRedisCache-------通过key得到redis数据库的值");
-        RBucket<V> vrBucket =  this.redisson.getBucket(this.getRedisCacheKey(k));
+        RBucket<V> vrBucket =  this.redisson.getBucket(this.getRedisCacheKey(k),CODEC);
         return vrBucket.get();
 //        return (V) this.redisTemplate.opsForValue().get(this.getRedisCacheKey(k));
     }
@@ -45,7 +47,7 @@ public class ShiroRedisCache<K, V> implements Cache<K, V> {
     @Override
     public V put(K k, V v) throws CacheException {
         log.info("---------------->ShiroRedisCache---------设置redis下的key和value的值，将登陆信息存入到redis");
-        RBucket<V> vrBucket =  this.redisson.getBucket(this.getRedisCacheKey(k));
+        RBucket<V> vrBucket =  this.redisson.getBucket(this.getRedisCacheKey(k),CODEC);
         vrBucket.set(v,cacheLive,TimeUnit.MINUTES);
         return vrBucket.get();
 //        redisTemplate.opsForValue().set(this.getRedisCacheKey(k), v, cacheLive, TimeUnit.MINUTES);
@@ -58,7 +60,7 @@ public class ShiroRedisCache<K, V> implements Cache<K, V> {
 //        V obj = (V) this.redisTemplate.opsForValue().get(this.getRedisCacheKey(k));
 //        redisTemplate.delete(this.getRedisCacheKey(k));
 //        return obj;
-        RBucket<V> vrBucket =  this.redisson.getBucket(this.getRedisCacheKey(k));
+        RBucket<V> vrBucket =  this.redisson.getBucket(this.getRedisCacheKey(k),CODEC);
         V value = vrBucket.get();
         vrBucket.delete();
         return value;
@@ -106,7 +108,7 @@ public class ShiroRedisCache<K, V> implements Cache<K, V> {
         return values;*/
         Set<V> values = new HashSet<V>(10);
         this.redisson.getKeys().getKeysByPattern(this.cacheKeyPrefix + "*").forEach(key -> {
-            RBucket<V> buckets = this.redisson.getBucket(key);
+            RBucket<V> buckets = this.redisson.getBucket(key,CODEC);
             values.add(buckets.get());
         });
         return values;
