@@ -19,6 +19,7 @@
 		<module>kafka</module>
 		<module>shiro</module>
 		<module>transactional</module>
+		<module>annotation</module>
 	</modules>
 
 	<properties>
