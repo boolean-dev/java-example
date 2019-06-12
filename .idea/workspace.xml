@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f3987dc-d1af-453b-ac07-faeade7fe72f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/.mvn/wrapper/MavenWrapperDownloader.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/.mvn/wrapper/maven-wrapper.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/.mvn/wrapper/maven-wrapper.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/mvnw" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/mvnw.cmd" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/pom.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/src/main/java/com/tao/java/example/annotation/AnnotationApplication.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/src/main/resources/application.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/annotation/src/test/java/com/tao/java/example/annotation/AnnotationApplicationTests.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/example.iml" afterPath="$PROJECT_DIR$/example.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/transactional/src/main/java/com/tao/java/example/transactional/controller/MainController.java" afterPath="$PROJECT_DIR$/transactional/src/main/java/com/tao/java/example/transactional/controller/MainController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -80,8 +86,8 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/transactional/src/main/java/com/tao/java/example/transactional/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="475">
+              <caret line="25" column="49" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -305,6 +311,56 @@
               <item name="annotation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-example" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-example" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-example" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-example" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tao" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-example" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tao" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-example" type="b2602c69:ProjectViewProjectNode" />
@@ -547,7 +603,7 @@
       <workItem from="1554257197794" duration="5241000" />
       <workItem from="1560234807569" duration="249000" />
       <workItem from="1560245103940" duration="718000" />
-      <workItem from="1560305909562" duration="3677000" />
+      <workItem from="1560305909562" duration="3710000" />
     </task>
     <task id="LOCAL-00001" summary="add async">
       <created>1551347314792</created>
@@ -570,11 +626,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553853955378</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=":sparkles: 添加注解模块">
+      <created>1560311992143</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560311992143</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82391000" />
+    <option name="totallyTimeSpent" value="82424000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -1040,8 +1103,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/transactional/src/main/java/com/tao/java/example/transactional/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="475">
+          <caret line="25" column="49" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
