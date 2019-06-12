@@ -2,7 +2,6 @@ package com.tao.java.example.kafka.producer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -23,14 +22,14 @@ import java.util.UUID;
 @EnableScheduling
 public class KafkaProducer {
 
-    @Autowired
-    private KafkaTemplate kafkaTemplate;
+    /*@Autowired
+    private KafkaTemplate kafkaTemplate;*/
 
     @Scheduled(cron = "00/1 * * * * ?")
     public void send(){
         String message = LocalDateTime.now().toString();
         log.info("message={}", message);
-        kafkaTemplate.send("my-topics",message);
+//        kafkaTemplate.send("my-topics",message);
 
 //        String message = UUID.randomUUID().toString() + LocalDateTime.now().toString();
 //        log.info("--------message={}", message);
