@@ -22,6 +22,7 @@ public class MainController {
     private MainService mainService;
 
 
+
     @RequestMapping(path = "/index", method = RequestMethod.GET)
     public Map<String,Object> index() {
         Map<String,Object> result = new HashMap<>();
