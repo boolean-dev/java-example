@@ -19,12 +19,25 @@ public class HelloController {
     @RequestMapping("/")
     public String index() {
         log.info("----------->index");
-        return "index";
+        return "/index";
     }
 
     @RequestMapping("/hello")
     public String hello() {
         log.info("----------->hello");
-        return "hello";
+        return "/hello";
     }
+
+    @RequestMapping("/toLogin")
+    public String toLogin() {
+        log.info("----------->toLogin");
+        return "/login";
+    }
+    @RequestMapping("/login")
+    public String login(String name, String password) {
+        log.info("----------->login");
+        log.info("name={},password={}", name, password);
+        return "/login";
+    }
+
 }
